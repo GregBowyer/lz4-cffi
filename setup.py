@@ -21,6 +21,7 @@ setup(
     install_requires=['cffi>=0.8'],
     include_package_data=False,
     zip_safe=False,
+    package_data={'lz4': ['*.py', '*.c', '*.h']},
     keywords=['lz4', 'pypy'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
