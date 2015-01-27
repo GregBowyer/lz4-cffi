@@ -1,7 +1,7 @@
 from setuptools import setup
 import lz4
 
-VERSION = (1, 0, 2)
+VERSION = (1, 0, 3)
 VERSION_STR = '.'.join([str(x) for x in VERSION])
 
 setup(
@@ -16,9 +16,9 @@ setup(
     ext_modules=[
         lz4.ffi.verifier.get_extension(),
     ],
-    tests_requires=['nose>=1.0'],
+    tests_require=['nose>=1.0'],
     test_suite='nose.collector',
-    install_requires=['cffi>=0.8'],
+    setup_requires=['cffi>=0.8'],
     include_package_data=False,
     zip_safe=False,
     package_data={'lz4': ['*.py', '*.c', '*.h']},
