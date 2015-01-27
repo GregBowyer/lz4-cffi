@@ -1,27 +1,8 @@
-from setuptools import setup, Extension
+from setuptools import setup
 import lz4
 
 VERSION = (1, 0, 0)
 VERSION_STR = '.'.join([str(x) for x in VERSION])
-
-"""
-Extension('lz4f', [
-    'src/lz4.c',
-    'src/lz4hc.c',
-    'src/lz4frame.c',
-    'src/xxhash.c',
-], extra_compile_args=[
-    '-std=c99',
-    '-O3',
-    '-Wall',
-    '-Wextra',
-    '-Wundef',
-    '-Wshadow',
-    '-Wcast-align',
-    '-Wstrict-prototypes',
-    '-pedantic',
-]),
-"""
 
 setup(
     name='lz4-cffi',
@@ -35,7 +16,7 @@ setup(
     ext_modules=[
         lz4.ffi.verifier.get_extension(),
     ],
-    setup_requires=['nose>=1.0'],
+    tests_requires=['nose>=1.0'],
     test_suite='nose.collector',
     install_requires=['cffi>=0.8'],
     include_package_data=False,
