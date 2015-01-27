@@ -1,7 +1,7 @@
 from setuptools import setup
 import lz4
 
-VERSION = (1, 0, 3)
+VERSION = (1, 0, 4)
 VERSION_STR = '.'.join([str(x) for x in VERSION])
 
 setup(
@@ -18,6 +18,7 @@ setup(
     ],
     tests_require=['nose>=1.0'],
     test_suite='nose.collector',
+    install_requires=['cffi>=0.8'],
     setup_requires=['cffi>=0.8'],
     include_package_data=False,
     zip_safe=False,
