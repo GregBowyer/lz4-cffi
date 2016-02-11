@@ -89,7 +89,7 @@ def uncompress(source):
     data, size = _uncompress(source)
     return ffi.buffer(data, size)[:]
 
-loads = uncompress
+loads = decompress = uncompress
 dumps = compress
 
-__all__ = ['compress', 'compressHC', 'uncompress', 'loads', 'dumps']
+__all__ = ['compress', 'compressHC', 'uncompress', 'decompress', 'loads', 'dumps']
